@@ -1,6 +1,10 @@
 import './_JobForm.scss'
 
 import React from 'react'
+import PropTypes from 'prop-types'
+import {connect} from 'react-redux'
+import get from 'lodash/get'
+import includes from 'lodash/includes'
 import Icon from '../../ui/icon'
 import Button from '../../ui/button'
 import Checkbox from '../../ui/checkbox'
@@ -24,7 +28,11 @@ export const onSubmit = () => {
   console.log("submitting")
 }
 
-export const JobFormComponent = () => <div className="JobForm">
+export const JobFormComponent = ({isSummary, levelsOfEducation, yearsOfExperience, minHours, maxHours}) => {
+  console.log("JOB CRITERIA")
+  console.log(isSummary)
+
+  return <div className="JobForm">
   <JobFormHeader />
   <form>
     <div className="JobForm--section">
@@ -32,7 +40,7 @@ export const JobFormComponent = () => <div className="JobForm">
       <input
         placeholder="i.e. 5+"
         type="text"
-        value={''}
+        value={yearsOfExperience}
       />
     </div>
 
@@ -42,7 +50,7 @@ export const JobFormComponent = () => <div className="JobForm">
           <Checkbox
             key={`education-${index}`}
             name={level}
-            checked={true}
+            checked={includes(levelsOfEducation, level)}
             onChange={() => {console.log('checked')}}>
           {level}
           </Checkbox>
@@ -53,9 +61,9 @@ export const JobFormComponent = () => <div className="JobForm">
       <label className="JobForm--sectionText">No. of working hours (per week)</label>
       <div className="JobForm--hours">
         <label>Min.</label>
-        <input type="text" value={''} />
+        <input type="text" value={minHours} />
         <label>Max.</label>
-        <input type="text" value={''} />
+        <input type="text" value={maxHours} />
       </div>
     </div>
 
@@ -66,5 +74,27 @@ export const JobFormComponent = () => <div className="JobForm">
     </div>
   </form>
 </div>
+}
 
-export default JobFormComponent
+JobFormComponent.propTypes = {
+  jobCriteria: PropTypes.obj,
+  levelsOfEducation: PropTypes.array,
+  yearsOfExperience: PropTypes.string,
+  minHours: PropTypes.string,
+  maxHours: PropTypes.string
+}
+
+export let mapStateToProps = ({jobCriteria}) => ({
+  isSummary: get(jobCriteria, 'isSummary', false),
+  levelsOfEducation: get(jobCriteria, 'levelsOfEducation', []),
+  yearsOfExperience: get(jobCriteria, 'yearsOfExperience', ''),
+  minHours: get(jobCriteria, 'minHours', ''),
+  maxHours: get(jobCriteria, 'maxHours', '')
+})
+
+export let mapDispatchToProps = null
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(JobFormComponent)
