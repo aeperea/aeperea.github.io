@@ -1,0 +1,15 @@
+@import '../../styles/_palette.scss';
+
+.Input {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  width: 80px;
+  background-color: $true-white;
+  border: 1px solid $light-gray;
+  border-radius: 3px;
+  margin: 0.625rem 0.625rem 0 0;
+
+  &--error {
+    border: 1px solid $border-red;
+  }
+}
