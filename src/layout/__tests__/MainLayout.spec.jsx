@@ -1,7 +1,8 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 import {MainLayoutComponent, mapStateToProps} from '../MainLayoutComponent'
-import {JobForm, JobSummary} from '../../views/job-form'
+import JobForm from '../../views/job-form'
+import JobSummary from '../../views/job-summary'
 
 describe('MainLayout', () => {
   it('should be a mountable component', () => {

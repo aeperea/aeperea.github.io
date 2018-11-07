@@ -1,0 +1,52 @@
+@import '../../styles/_palette.scss';
+
+.JobSummary {
+  padding: 1rem;
+  background-color: $true-white;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  width: 666px;
+
+  &--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &--title {
+    display: flex;
+    align-items: center;
+  }
+
+  &--section {
+    margin-bottom: 1.5rem;
+  }
+
+  &--sectionText {
+    display: block;
+    font-weight: 600;
+  }
+
+  &--summaryText {
+    display: block;
+    color: $medium-gray;
+    font-size: 0.875rem;
+  }
+
+  &--summaryValue {
+    color: $dark-gray;
+  }
+
+  &--tagList {
+    margin: 0 0.5rem 0.5rem 0;
+  }
+
+  &--tag {
+    display: inline-block;
+    margin: 0.5rem 0.5rem 0 0;
+    padding: 0.25rem 0.625rem;
+    vertical-align: initial;
+    border-radius: 4px;
+    background-color: $background-gray;
+  }
+}

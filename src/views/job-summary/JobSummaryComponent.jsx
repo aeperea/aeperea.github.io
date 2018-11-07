@@ -1,4 +1,4 @@
-import './_JobForm.scss'
+import './_JobSummary.scss'
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -8,9 +8,9 @@ import Icon from '../../ui/icon'
 import Button from '../../ui/button'
 import {TOGGLE_SUMMARY_DISPLAY} from '../../redux/constants'
 
-export const JobSummaryComponent = ({levelsOfEducation, yearsOfExperience, minMaxCopy, toggleSummary}) => <div className="JobForm">
+export const JobSummaryComponent = ({levelsOfEducation, yearsOfExperience, minMaxCopy, toggleSummary}) => <div className="JobSummary">
   <div className="JobForm--header">
-    <h2 className="JobForm--title-summary"> <Icon type="success" />Job criteria</h2>
+    <h2 className="JobForm--title"><Icon type="success"/>Job criteria</h2>
     <div className="JobForm--subheader">
       <Button className="Button--edit" onClick={toggleSummary}>
         Edit
@@ -30,7 +30,7 @@ export const JobSummaryComponent = ({levelsOfEducation, yearsOfExperience, minMa
       Level of education
     </div>
     <div className="JobForm--tagList">
-      {levelsOfEducation.map((level, index) => <span key={`tags-${index}`} className="JobForm--tag">{level}</span>)}
+      {levelsOfEducation && levelsOfEducation.map((level, index) => <span key={`tags-${index}`} className="JobForm--tag">{level}</span>)}
     </div>
   </div>
 </div>
