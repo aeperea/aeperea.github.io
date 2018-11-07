@@ -39,6 +39,10 @@ export class CheckboxContainer extends React.Component {
     this.props.onChange(this.state.isChecked)
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.checked !== nextState.isChecked
+  }
+
   static displayName = 'CheckboxContainer'
 
   static defaultProps = {
