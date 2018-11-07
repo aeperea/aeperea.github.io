@@ -1,2 +1,10 @@
 .JobForm {
+  &--section {
+    margin-bottom: 1.5rem;
+  }
+
+  &--sectionText {
+    display: block;
+    font-weight: 600;
+  }
 }
