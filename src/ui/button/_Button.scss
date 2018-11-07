@@ -1,2 +1,25 @@
+@import '../../styles/_palette.scss';
+
 .Button {
+  display: inline-block;
+  text-align: center;
+  padding: 0.625rem 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &--save {
+    background-color: $friendly-turquoise;
+    border-color: $strong-turquoise;
+    color: $true-white;
+  }
+
+  &--edit {
+    background-color: $basic-blue;
+    border-color: $strong-turquoise;
+    color: $true-white;
+  }
 }

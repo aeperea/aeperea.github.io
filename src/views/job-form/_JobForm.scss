@@ -1,4 +1,11 @@
+@import '../../styles/_palette.scss';
+
 .JobForm {
+  padding: 1rem;
+  background-color: $true-white;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+
   &--section {
     margin-bottom: 1.5rem;
   }
