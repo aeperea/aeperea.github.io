@@ -1,9 +1,14 @@
 import './App.scss'
-import React, {Component} from 'react'
-import {JobForm} from './views/job-form'
+import React from 'react'
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import reducers from './redux/reducers';
+import {MainLayout} from './layout'
 
-const App = () => <div className="App">
-    <JobForm />
-  </div>
+const App = () => <Provider store={createStore(reducers)}>
+    <div className="App">
+      <MainLayout />
+    </div>
+  </Provider>
 
 export default App
