@@ -2,11 +2,11 @@ import './_Icon.scss'
 
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
-export const IconComponent = ({number, type}) => <span className="Icon">{number}</span>
+export const IconComponent = props => <span className={classNames('Icon', `Icon--${props.type}`)}>{props.children}</span>
 
 IconComponent.propTypes = {
-  number: PropTypes.string,
   type: PropTypes.string
 }
 

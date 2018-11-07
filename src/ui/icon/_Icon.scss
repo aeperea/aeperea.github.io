@@ -1,0 +1,28 @@
+@import '../../styles/_palette.scss';
+
+.Icon {
+  display: inline-block;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-size: 1.25rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+
+  &--number {
+    color: $true-white;
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+    background-color: $funky-purple;
+
+  }
+
+  &--success {
+    background-image: url('../../assets/icon-done.svg');
+  }
+
+  &--error {
+    background-image: url('../../assets/icon-warning.svg');
+  }
+}
