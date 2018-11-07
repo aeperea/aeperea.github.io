@@ -3,8 +3,11 @@ import './_Button.scss'
 import React from 'react'
 import classNames from 'classnames'
 
-export const ButtonComponent = props => <div className={classNames('Button', props.className)}>
+export const ButtonComponent = props =>
+  <button
+    className={classNames('Button', props.className)}
+    onClick={props.onClick}>
     {props.children}
-  </div>
+  </button>
 
 export default ButtonComponent
