@@ -4,6 +4,7 @@
   display: inline-block;
   width: 1.75rem;
   height: 1.75rem;
+  line-height: 1.75rem;
   background-size: 1.25rem;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,6 +21,8 @@
 
   &--success {
     background-image: url('../../assets/icon-done.svg');
+    background-size: 1.75rem;
+    margin-right: 0.5rem;
   }
 
   &--error {
