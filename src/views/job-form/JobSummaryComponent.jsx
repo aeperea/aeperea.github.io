@@ -6,17 +6,13 @@ import {connect} from 'react-redux'
 import get from 'lodash/get'
 import Icon from '../../ui/icon'
 import Button from '../../ui/button'
+import {TOGGLE_SUMMARY_DISPLAY} from '../../redux/constants'
 
-export const onSubmit = e => {
-  e.preventDefault()
-  console.log("submitting edit")
-}
-
-export const JobSummaryComponent = ({levelsOfEducation, yearsOfExperience, minMaxCopy}) => <div className="JobForm">
+export const JobSummaryComponent = ({levelsOfEducation, yearsOfExperience, minMaxCopy, toggleSummary}) => <div className="JobForm">
   <div className="JobForm--header">
     <h2 className="JobForm--title-summary"> <Icon type="success" />Job criteria</h2>
     <div className="JobForm--subheader">
-      <Button className="Button--edit" onSubmit={onSubmit}>
+      <Button className="Button--edit" onClick={toggleSummary}>
         Edit
       </Button>
     </div>
@@ -43,7 +39,8 @@ JobSummaryComponent.propTypes = {
   jobCriteria: PropTypes.func,
   levelsOfEducation: PropTypes.array,
   yearsOfExperience: PropTypes.string,
-  minMaxCopy: PropTypes.string
+  minMaxCopy: PropTypes.string,
+  toggleSummary: PropTypes.func
 }
 
 export const mapStateToProps = ({jobCriteria}) => ({
@@ -52,7 +49,9 @@ export const mapStateToProps = ({jobCriteria}) => ({
   minMaxCopy: `${get(jobCriteria, 'minHours', '')}-${get(jobCriteria, 'maxHours', '')} hours`
 })
 
-export const mapDispatchToProps = null
+export const mapDispatchToProps = dispatch => ({
+  toggleSummary: () => dispatch({type: TOGGLE_SUMMARY_DISPLAY})
+})
 
 export default connect(
   mapStateToProps,

@@ -4,11 +4,12 @@ import {
   UPDATE_EDUCATION,
   UPDATE_YEARS_OF_EXPERIENCE,
   UPDATE_MIN_HOURS,
-  UPDATE_MAX_HOURS
+  UPDATE_MAX_HOURS,
+  TOGGLE_SUMMARY_DISPLAY
 } from '../constants'
 
 const initialState = {
-  isSummary: false,
+  isSummary: true,
   levelsOfEducation: [
   ],
   yearsOfExperience: '',
@@ -37,6 +38,8 @@ export const jobCriteriaReducer = (state = initialState, action) => {
     return {...state, minHours: min}
   case UPDATE_MAX_HOURS:
     return {...state, maxHours: max}
+  case TOGGLE_SUMMARY_DISPLAY:
+    return {...state, isSummary: !state.isSummary}
   default:
     return state
   }

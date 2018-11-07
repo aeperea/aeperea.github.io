@@ -11,7 +11,8 @@ import Button from '../../ui/button'
 import Checkbox from '../../ui/checkbox'
 import {
   UPDATE_EDUCATION, UPDATE_YEARS_OF_EXPERIENCE,
-  UPDATE_MIN_HOURS, UPDATE_MAX_HOURS
+  UPDATE_MIN_HOURS, UPDATE_MAX_HOURS,
+  TOGGLE_SUMMARY_DISPLAY
 } from '../../redux/constants'
 import {LEVELS, ONLY_DIGITS_REGEX} from '../../utils/generalUtils'
 
