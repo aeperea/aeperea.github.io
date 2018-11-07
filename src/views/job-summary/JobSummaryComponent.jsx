@@ -9,28 +9,28 @@ import Button from '../../ui/button'
 import {TOGGLE_SUMMARY_DISPLAY} from '../../redux/constants'
 
 export const JobSummaryComponent = ({levelsOfEducation, yearsOfExperience, minMaxCopy, toggleSummary}) => <div className="JobSummary">
-  <div className="JobForm--header">
-    <h2 className="JobForm--title"><Icon type="success"/>Job criteria</h2>
-    <div className="JobForm--subheader">
+  <div className="JobSummary--header">
+    <h2 className="JobSummary--title"><Icon type="success"/>Job criteria</h2>
+    <div className="JobSummary--subheader">
       <Button className="Button--edit" onClick={toggleSummary}>
         Edit
       </Button>
     </div>
   </div>
-  <div className="JobForm--section">
-    <div className="JobForm--summaryText">
-      A minimum No. years of experience: <span className="JobForm--summaryValue">{yearsOfExperience}</span>
+  <div className="JobSummary--section">
+    <div className="JobSummary--summaryText">
+      A minimum No. years of experience: <span className="JobSummary--summaryValue">{yearsOfExperience}</span>
     </div>
-    <div className="JobForm--summaryText">
-      No. of working hours (per week): <span className="JobForm--summaryValue">{minMaxCopy}</span>
+    <div className="JobSummary--summaryText">
+      No. of working hours (per week): <span className="JobSummary--summaryValue">{minMaxCopy}</span>
     </div>
   </div>
-  <div className="JobForm--section">
-    <div className="JobForm--sectionText">
+  <div className="JobSummary--section">
+    <div className="JobSummary--sectionText">
       Level of education
     </div>
-    <div className="JobForm--tagList">
-      {levelsOfEducation && levelsOfEducation.map((level, index) => <span key={`tags-${index}`} className="JobForm--tag">{level}</span>)}
+    <div className="JobSummary--tagList">
+      {levelsOfEducation && levelsOfEducation.map((level, index) => <span key={`tags-${index}`} className="JobSummary--tag">{level}</span>)}
     </div>
   </div>
 </div>
