@@ -1,30 +1,42 @@
+import includes from 'lodash/includes'
 import {
-  TOGGLE_CHECKBOX_STUDIES
+  TOGGLE_CHECKBOX_STUDIES,
+  UPDATE_EDUCATION,
+  UPDATE_YEARS_OF_EXPERIENCE,
+  UPDATE_MIN_HOURS,
+  UPDATE_MAX_HOURS
 } from '../constants'
 
 const initialState = {
   isSummary: false,
-  levelsOfEducation: [],
+  levelsOfEducation: [
+  ],
   yearsOfExperience: '',
-  minHours: 32,
-  maxHours: 40
+  minHours: '32',
+  maxHours: '40',
+  errors: []
 }
 
-export let jobCriteriaReducer = (state = initialState, action) => {
-  let {type, selectedSegment, segments} = action
+export const updateLevelsOfEducation = (level, currentLevels) => {
+  if (includes(currentLevels, level)) {
+    let [level, ...newLevels] = currentLevels
+    return newLevels
+  }
+  return [...currentLevels, level]
+}
+
+export const jobCriteriaReducer = (state = initialState, action) => {
+  let {type, level, years, min, max} = action
 
   switch (type) {
-  // case SET_MORE_FLIGHT_OPTIONS_VISIBLE:
-  //   return {...state, isMoreOptionsVisible: !state.isMoreOptionsVisible}
-
-  // case ADD_SEGMENT:
-  //   return {...state, selectedSegments: state.selectedSegments.concat(selectedSegment)}
-
-  // case UPDATE_SEGMENTS:
-  //   return {...state, selectedSegments: segments}
-
-  // case CLEAR_ALL_SEGMENTS:
-  //   return {...state, selectedSegments: []}
+  case UPDATE_EDUCATION:
+    return {...state, levelsOfEducation: updateLevelsOfEducation(level, state.levelsOfEducation)}
+  case UPDATE_YEARS_OF_EXPERIENCE:
+    return {...state, yearsOfExperience: years}
+  case UPDATE_MIN_HOURS:
+    return {...state, minHours: min}
+  case UPDATE_MAX_HOURS:
+    return {...state, maxHours: max}
   default:
     return state
   }
