@@ -4,6 +4,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import noop from 'lodash/noop'
+import get from 'lodash/get'
+import lowerCase from 'lodash/lowerCase'
+
+export const convertToId = level => lowerCase(get(level.split(' / '), 0, ''))
 
 export const CheckboxComponent = ({className, name, onChange, checked, children}) =>
   <div className={classNames('Checkbox', className)}>
@@ -11,7 +15,7 @@ export const CheckboxComponent = ({className, name, onChange, checked, children}
       type="checkbox"
       className="Checkbox-control"
       checked={checked}
-      id={name}
+      id={convertToId(name)}
       onChange={onChange}/>
     <span className="Checkbox-text">{children}</span>
   </div>
@@ -29,6 +33,10 @@ export class CheckboxContainer extends React.Component {
 
   onChange = () => {
     this.setState({isChecked: !this.state.isChecked})
+  }
+
+  componentDidUpdate() {
+    this.props.onChange(this.state.isChecked)
   }
 
   static displayName = 'CheckboxContainer'
