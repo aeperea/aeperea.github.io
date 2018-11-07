@@ -10,6 +10,7 @@ export const CheckboxComponent = ({className, name, onChange, checked, children}
     <input
       type="checkbox"
       className="Checkbox-control"
+      checked={checked}
       id={name}
       onChange={onChange}/>
     <span className="Checkbox-text">{children}</span>
