@@ -5,7 +5,26 @@
   background-color: $true-white;
   border-radius: 6px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-  width: 666px;
+
+  &--header {
+    display: flex;
+  }
+
+  &--title {
+    display: inline;
+    margin-left: 1rem;
+  }
+
+  &--icon {
+    margin-top: 0.25rem;
+  }
+
+  &--description {
+    display: block;
+    margin: 0.25rem 0 1.5rem 1rem;
+    color: $medium-gray;
+    font-size: 0.875rem;
+  }
 
   &--section {
     margin-bottom: 1.5rem;
@@ -22,50 +41,5 @@
 
   &--optionGroup {
     margin-top: 0.25rem;
-  }
-
-  &--header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &--title-form {
-    display: inline;
-  }
-
-  &--title-summary {
-    display: flex;
-    align-items: center;
-  }
-
-  &--description {
-    display: block;
-    margin: 0.625rem 0 1rem 1rem;
-    color: $medium-gray;
-    font-size: 0.875rem;
-  }
-
-  &--summaryText {
-    display: block;
-    color: $medium-gray;
-    font-size: 0.875rem;
-  }
-
-  &--summaryValue {
-    color: $dark-gray;
-  }
-
-  &--tagList {
-    margin: 0 0.5rem 0.5rem 0;
-  }
-
-  &--tag {
-    display: inline-block;
-    margin: 0.5rem 0.5rem 0 0;
-    padding: 0.25rem 0.625rem;
-    vertical-align: initial;
-    border-radius: 4px;
-    background-color: $background-gray;
   }
 }
