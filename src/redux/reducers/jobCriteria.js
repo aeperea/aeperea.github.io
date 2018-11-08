@@ -1,6 +1,5 @@
 import includes from 'lodash/includes'
 import {
-  TOGGLE_CHECKBOX_STUDIES,
   UPDATE_EDUCATION,
   UPDATE_YEARS_OF_EXPERIENCE,
   UPDATE_MIN_HOURS,
@@ -20,6 +19,7 @@ const initialState = {
 
 export const updateLevelsOfEducation = (level, currentLevels) => {
   if (includes(currentLevels, level)) {
+    // eslint-disable-next-line
     let [level, ...newLevels] = currentLevels
     return newLevels
   }
