@@ -1,3 +1,7 @@
 .Checkbox {
- line-height: 1.8;
+  line-height: 1.8;
+
+  &--text {
+    margin-left: 0.25rem;
+  }
 }

@@ -13,11 +13,10 @@ export const CheckboxComponent = ({className, name, onChange, checked, children}
   <div className={classNames('Checkbox', className)}>
     <input
       type="checkbox"
-      className="Checkbox-control"
       checked={checked}
       id={convertToId(name)}
       onChange={onChange}/>
-    <span className="Checkbox-text">{children}</span>
+    <span className="Checkbox--text">{children}</span>
   </div>
 
 
