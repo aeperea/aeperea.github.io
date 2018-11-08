@@ -9,7 +9,7 @@ import {
 } from '../constants'
 
 const initialState = {
-  isSummary: true,
+  isSummary: false,
   levelsOfEducation: [
   ],
   yearsOfExperience: '',
