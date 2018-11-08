@@ -2,7 +2,6 @@
   "name": "vonq-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/aeperea/vonq-test",
   "dependencies": {
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
