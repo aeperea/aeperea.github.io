@@ -27,7 +27,7 @@ const JobFormHeader = () => <div className="JobForm--header">
     </div>
   </div>
 
-const ErrorTag = ({msg = 'This field is required.'}) => <div className="JobForm--error">
+export const ErrorTag = ({msg = 'This field is required.'}) => <div className="JobForm--error">
     <Icon type="error"></Icon>
     <span className="JobForm--errorText">{msg}</span>
   </div>
