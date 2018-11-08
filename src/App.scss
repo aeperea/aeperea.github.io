@@ -1,6 +1,11 @@
 .App {
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+@media (min-width: 666px) {
+  .App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
