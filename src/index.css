@@ -14,7 +14,12 @@ body {
 
 html, body, #root {
   height: 100%;
-  line-height: 1.5
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 /* Some general classes */
