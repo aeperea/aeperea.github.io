@@ -4,7 +4,8 @@ import {
   UPDATE_YEARS_OF_EXPERIENCE,
   UPDATE_MIN_HOURS,
   UPDATE_MAX_HOURS,
-  TOGGLE_SUMMARY_DISPLAY
+  TOGGLE_SUMMARY_DISPLAY,
+  UPDATE_ERRORS
 } from '../constants'
 
 const initialState = {
@@ -14,7 +15,13 @@ const initialState = {
   yearsOfExperience: '',
   minHours: '32',
   maxHours: '40',
-  errors: []
+  errors: {
+    years: false,
+    levels: false,
+    min: false,
+    max: false,
+    negative: false
+  }
 }
 
 export const updateLevelsOfEducation = (level, currentLevels) => {
@@ -26,8 +33,14 @@ export const updateLevelsOfEducation = (level, currentLevels) => {
   return [...currentLevels, level]
 }
 
+export const updateErrorList = (errorType, value, errors) => {
+  let newError = {}
+  newError[errorType] = value
+  return {...errors, ...newError}
+}
+
 export const jobCriteriaReducer = (state = initialState, action) => {
-  let {type, level, years, min, max} = action
+  let {type, level, years, min, max, errorType, value} = action
 
   switch (type) {
   case UPDATE_EDUCATION:
@@ -40,6 +53,8 @@ export const jobCriteriaReducer = (state = initialState, action) => {
     return {...state, maxHours: max}
   case TOGGLE_SUMMARY_DISPLAY:
     return {...state, isSummary: !state.isSummary}
+  case UPDATE_ERRORS:
+    return {...state, errors: updateErrorList(errorType, value, state.errors)}
   default:
     return state
   }
