@@ -12,7 +12,7 @@ This project objective is to implement a form as described in the [VONQ Front en
 - Validation for the form is done manually for each field.
 
 ### Future work
-- Validation is definitely not in grasp of the versitality of the rest of the code. This could be fixed by creating a whole validation util. There are third party solutions like (Joi)[https://github.com/jeffbski/joi-browser] that have helped me in larger projects.
+- Validation is definitely not in grasp of the versitality of the rest of the code. This could be fixed by creating a whole validation util. There are third party solutions like [Joi](https://github.com/jeffbski/joi-browser) that have helped me in larger projects.
 - Adding a CSS framework would definitely help managing viewports. Usually the Input fields feel a little bigger in small viewports. I'm aware this can be done natively with CSS but it's sometimes hard to mantain.
 - Integration tests. While I added tests for every component and function in the reducer, there's no integration tests for the whole application behavior. I do think that for this specific application they are not entirely necesary, as every change in the store can be easily tested with the reducer and checking if the behavior on the view is as expected.
 - Make the ui components more robust.
