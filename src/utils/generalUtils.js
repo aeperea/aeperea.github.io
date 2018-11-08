@@ -5,4 +5,4 @@ export const LEVELS = [
   'Vocational / Diploma / Associates degree'
 ]
 
-export const ONLY_DIGITS_REGEX = /^\d+$/
+export const ONLY_DIGITS_REGEX = /^(\s*|\d+)$/
