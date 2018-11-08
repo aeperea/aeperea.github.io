@@ -58,6 +58,7 @@ export const JobFormComponent = ({isSummary, levelsOfEducation, yearsOfExperienc
       type={"text"}
       regex={ONLY_DIGITS_REGEX}
       value={yearsOfExperience}
+      hasError={get(errors, 'years', false)}
       onChange={e => updateYearsOfExperience(e.target.value)}
     />
     {get(errors, 'years', false) && <ErrorTag/>}
@@ -89,6 +90,7 @@ export const JobFormComponent = ({isSummary, levelsOfEducation, yearsOfExperienc
           type={"text"}
           regex={ONLY_DIGITS_REGEX}
           value={minHours}
+          hasError={get(errors, 'min', false) || get(errors, 'negative', false)}
           onChange={e => updateMinHours(e.target.value)}/>
         {get(errors, 'min', false) && <ErrorTag/>}
       </div>
@@ -99,6 +101,7 @@ export const JobFormComponent = ({isSummary, levelsOfEducation, yearsOfExperienc
           type={"text"}
           regex={ONLY_DIGITS_REGEX}
           value={maxHours}
+          hasError={get(errors, 'max', false) || get(errors, 'negative', false)}
           onChange={e => updateMaxHours(e.target.value)}/>
         {get(errors, 'max', false) && <ErrorTag/>}
       </div>

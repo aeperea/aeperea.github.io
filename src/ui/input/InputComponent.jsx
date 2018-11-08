@@ -11,9 +11,9 @@ export const handleOnChange = (e, onChange, regex) => {
   return
 }
 
-export const InputComponent = ({className, onChange, placeholder, value, type, regex}) =>
+export const InputComponent = ({className, onChange, placeholder, value, type, hasError, regex}) =>
   <input
-    className={classNames('Input', className)}
+    className={classNames('Input', className, {'Input--error': hasError})}
     placeholder={placeholder}
     onChange={e => handleOnChange(e, onChange, regex)}
     value={value}
@@ -26,6 +26,7 @@ InputComponent.propTypes = {
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
   type: PropTypes.string,
+  hasError: PropTypes.bool,
   regex: PropTypes.instanceOf(RegExp)
 }
 
