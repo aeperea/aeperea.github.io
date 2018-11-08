@@ -17,9 +17,9 @@ import {
 import {LEVELS, ONLY_DIGITS_REGEX} from '../../utils/generalUtils'
 
 const JobFormHeader = () => <div className="JobForm--header">
-    <Icon type="number">1</Icon>
+    <div className="JobForm--icon"><Icon type="number">1</Icon></div>
     <div className="JobForm--subheader">
-      <h2 className="JobForm--title-form">Job criteria</h2>
+      <h2 className="JobForm--title">Job criteria</h2>
       <div className="JobForm--description">We will use the data we collect here to better target your desired audicience.</div>
     </div>
   </div>
