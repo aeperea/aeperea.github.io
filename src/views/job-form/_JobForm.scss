@@ -42,4 +42,19 @@
   &--optionGroup {
     margin-top: 0.25rem;
   }
+
+  &--hours {
+    display: flex;
+  }
+
+  &--error {
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &--errorText {
+    color: $error-red;
+    font-size: 0.875rem;
+  }
 }
