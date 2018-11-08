@@ -29,8 +29,7 @@ const JobFormHeader = () => <div className="JobForm--header">
     </div>
   </div>
 
-export const validateForm = (years, levels, min, max, errors, toggleSummary, updateErrors) => {
-  Promise.all([
+export const validateForm = (years, levels, min, max, toggleSummary, updateErrors) => Promise.all([
     updateErrors('years', isEmpty(years)),
     updateErrors('levels', isEmpty(levels)),
     updateErrors('min', isEmpty(min)),
@@ -40,7 +39,6 @@ export const validateForm = (years, levels, min, max, errors, toggleSummary, upd
       const errorList = values.map(v => !v.value)
       return every(errorList) ? toggleSummary() : null
     })
-}
 
 export const JobFormComponent = ({isSummary, levelsOfEducation, yearsOfExperience,
   minHours, maxHours, errors, updateEducationList, updateYearsOfExperience,
@@ -102,8 +100,8 @@ export const JobFormComponent = ({isSummary, levelsOfEducation, yearsOfExperienc
     </div>
 
     <div className="text-right">
-      <Button className="Button--save" onClick={() => validateForm(yearsOfExperience, levelsOfEducation, minHours, maxHours, errors, toggleSummary, updateErrors)}>
-        {some(Object.values(errors)) ? 'Save and Continue' : 'Save' }
+      <Button className="Button--save" onClick={() => validateForm(yearsOfExperience, levelsOfEducation, minHours, maxHours, toggleSummary, updateErrors)}>
+        {errors && some(Object.values(errors)) ? 'Save and Continue' : 'Save' }
       </Button>
     </div>
   </div>
