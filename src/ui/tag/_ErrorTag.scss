@@ -1,0 +1,12 @@
+@import '../../styles/_palette.scss';
+
+.ErrorTag {
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+
+  &--description {
+    color: $error-red;
+    font-size: 0.875rem;
+  }
+}
