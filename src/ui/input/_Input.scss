@@ -12,4 +12,8 @@
   &--error {
     border: 1px solid $border-red;
   }
+
+  &--wrapper {
+    display: inline;
+  }
 }
