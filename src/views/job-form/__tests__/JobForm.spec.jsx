@@ -54,8 +54,8 @@ describe('Job Form', () => {
 })
 
 describe('validateForm', () => {
-  const toggleSummary = jest.fn( )
-  const updateErrors = jest.fn(val => Promise.resolve({value: isEmpty(val)}))
+  const toggleSummary = jest.fn(() => Promise.resolve())
+  const updateErrors = jest.fn((val1, val2) => ({value: val2}))
 
   it('should call the update errors for validation', async () => {
     const [years, levels, min, max] = ['12', ['test'], '3', '4']
@@ -63,9 +63,9 @@ describe('validateForm', () => {
     expect(updateErrors).toBeCalled()
   })
 
-  it('should call the toggleSummary funciton when there is no errors', async () => {
+  it('should call the toggleSummary function when there is no errors', async () => {
     const [years, levels, min, max] = ['12', ['test'], '3', '4']
-    validateForm(years, levels, min, max, toggleSummary, updateErrors)
+    await validateForm(years, levels, min, max, toggleSummary, updateErrors)
     expect(toggleSummary).toBeCalled()
   })
 })
