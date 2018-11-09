@@ -2,7 +2,7 @@
 
 This project objective is to implement a form as described in the [VONQ Front end developer test assignment](https://github.com/vonq/front-end-developer-test-assignment)
 
-- It's live at [https://aep-vonq-test-1qqcq0kmg.now.sh/](https://aep-vonq-test-1qqcq0kmg.now.sh/)
+- It's live at [https://aep-vonq-test-jv023k9ui.now.sh/](https://aep-vonq-test-jv023k9ui.now.sh/)
 
 ### Notes
 - I used [Create React App](https://github.com/facebook/create-react-app) for time reasons and for being a simple project.
