@@ -6,3 +6,5 @@ export const LEVELS = [
 ]
 
 export const ONLY_DIGITS_REGEX = /^(\s*|\d+)$/
+
+export const getObjectValues = obj => Object.keys(obj).map(el => obj[el])

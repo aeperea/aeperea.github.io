@@ -19,7 +19,7 @@ import {
   TOGGLE_SUMMARY_DISPLAY,
   UPDATE_ERRORS
 } from '../../redux/constants'
-import {LEVELS, ONLY_DIGITS_REGEX} from '../../utils/generalUtils'
+import {LEVELS, ONLY_DIGITS_REGEX, getObjectValues} from '../../utils/generalUtils'
 
 const JobFormHeader = () => <div className="JobForm--header">
     <div className="JobForm--icon"><Icon type="number">1</Icon></div>
@@ -101,7 +101,7 @@ export const JobFormComponent = ({isSummary, levelsOfEducation, yearsOfExperienc
 
     <div className="text-right">
       <Button className="Button--save" onClick={() => validateForm(yearsOfExperience, levelsOfEducation, minHours, maxHours, toggleSummary, updateErrors)}>
-        {errors && some(Object.values(errors)) ? 'Save and Continue' : 'Save' }
+        {errors && some(getObjectValues(errors)) ? 'Save and Continue' : 'Save' }
       </Button>
     </div>
   </div>
