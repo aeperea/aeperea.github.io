@@ -2,6 +2,8 @@
 
 This project objective is to implement a form as described in the [VONQ Front end developer test assignment](https://github.com/vonq/front-end-developer-test-assignment)
 
+- It's live at [https://aep-vonq-test-1qqcq0kmg.now.sh/](https://aep-vonq-test-1qqcq0kmg.now.sh/)
+
 ### Notes
 - I used [Create React App](https://github.com/facebook/create-react-app) for time reasons and for being a simple project.
 - Chosen to add Redux because I think it makes it easier to organize the status of the application, even for a small form like this.
