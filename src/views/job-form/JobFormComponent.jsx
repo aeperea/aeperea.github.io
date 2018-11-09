@@ -47,7 +47,7 @@ export const JobFormComponent = ({isSummary, levelsOfEducation, yearsOfExperienc
     <div className="JobForm--section">
       <label className="JobForm--sectionText">A minimum No. years of experience</label>
       <Input
-        placeholder={"i.e. 5"}
+        placeholder={"e.g. 5"}
         type={"text"}
         regex={ONLY_DIGITS_REGEX}
         value={yearsOfExperience}
