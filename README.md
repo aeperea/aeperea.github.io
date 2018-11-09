@@ -10,6 +10,7 @@ This project objective is to implement a form as described in the [VONQ Front en
 - I didn't add React Router as there's really only one form in display (in two separate states)
 - The only React Class component that I used was for the Checkbox component. I wanted to encapsulate its behavior in an orderly fashion.
 - Validation for the form is done manually for each field.
+- I removed the option of adding the "+" sign in the years of experience field. I found that it doesn't make the input feel consistent in their data. This is a personal opinion, we could easily add the "+" sign by editing the regex found in the utils
 
 ### Future work
 - Validation is definitely not in grasp of the versitality of the rest of the code. This could be fixed by creating a whole validation util. There are third party solutions like [Joi](https://github.com/jeffbski/joi-browser) that have helped me in larger projects.
