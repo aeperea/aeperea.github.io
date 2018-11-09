@@ -46,11 +46,11 @@ export const jobCriteriaReducer = (state = initialState, action) => {
   case UPDATE_EDUCATION:
     return {...state, levelsOfEducation: updateLevelsOfEducation(level, state.levelsOfEducation)}
   case UPDATE_YEARS_OF_EXPERIENCE:
-    return {...state, yearsOfExperience: years}
+    return {...state, yearsOfExperience: years.trim()}
   case UPDATE_MIN_HOURS:
-    return {...state, minHours: min}
+    return {...state, minHours: min.trim()}
   case UPDATE_MAX_HOURS:
-    return {...state, maxHours: max}
+    return {...state, maxHours: max.trim()}
   case TOGGLE_SUMMARY_DISPLAY:
     return {...state, isSummary: !state.isSummary}
   case UPDATE_ERRORS:
