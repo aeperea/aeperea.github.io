@@ -5,6 +5,7 @@
   background-color: $true-white;
   border-radius: 6px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  width: 666px;
 
   &--header {
     display: flex;
@@ -45,5 +46,11 @@
 
   &--hours {
     display: flex;
+  }
+}
+
+@media (max-width: 666px) {
+  .JobForm {
+    width: 100%;
   }
 }

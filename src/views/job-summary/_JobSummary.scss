@@ -50,3 +50,9 @@
     background-color: $background-gray;
   }
 }
+
+@media (max-width: 666px) {
+  .JobSummary {
+    width: 100%;
+  }
+}
