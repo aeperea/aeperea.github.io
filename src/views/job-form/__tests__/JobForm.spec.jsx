@@ -1,5 +1,6 @@
 import React from 'react'
 import isEmpty from 'lodash/isEmpty'
+import Promise from 'bluebird'
 import {shallow, mount} from 'enzyme'
 import {JobFormComponent, validateForm, mapStateToProps, mapDispatchToProps} from '../JobFormComponent'
 import * as constants from '../../../redux/constants'
